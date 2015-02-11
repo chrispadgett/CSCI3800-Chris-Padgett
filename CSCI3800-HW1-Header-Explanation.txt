@@ -1,0 +1,98 @@
+Chris Padgett
+830-37-7617
+CSCI 3800 Spring 2015
+Homework 1
+
+REST Request Header:
+
+	GET https://www.googleapis.com/books/v1/volumes?q=turing HTTP/1.1
+		The requested resource.
+	Accept-Encoding: gzip,deflate
+		A list of acceptable encodings, this one includes gzip a GNU zip format and deflate a compression based on the deflate algorithm.
+	Host: www.googleapis.com
+		The domain name of the server, can also specify a port number if not using the default.
+	Connection: Keep-Alive
+		Contains control options for the connection.
+	User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+		Contains the user agent string of the user agent.
+
+
+		
+		
+REST Response Header:
+
+	HTTP/1.1 200 OK
+		Status code of the response.  In this case 200 means a good response.
+	Expires: Mon, 09 Feb 2015 19:25:03 GMT
+		Date/Time the request becomes stale.
+	Date: Mon, 09 Feb 2015 19:25:03 GMT
+		The date/time the message was sent/received.
+	Cache-Control: private, max-age=0, must-revalidate, no-transform
+		Caching mechanism that tells clients if/how long they may cache this message.
+	ETag: "_rmWcTkH-s1QFjg9mC3Xel0FZSQ/G4IZfGpmPxb2EqBd2RDuT3wtmBA"
+		Identification tag for a specific version of the resource.  Can often be a message digest.
+	Vary: Origin
+	Vary: X-Origin
+		Information to tell proxies how to match future request headers.  Used to decide if a cached response can be used.
+	Content-Type: application/json; charset=UTF-8
+		MIME type of the content.
+	X-Content-Type-Options: nosniff
+		Used to prevent IE and Chrome from MIME-sniffing a response away from the declared content type.
+	X-Frame-Options: SAMEORIGIN
+		Used for click jacking protection.
+	X-XSS-Protection: 1; mode=block
+		Cross style scripting filter.
+	Content-Length: 28526
+		The date/time the message was sent/received..  Value is in octets.
+	Server: GSE
+		The name of the server.
+	Alternate-Protocol: 443:quic,p=0.02
+		Alternate protocols that can be used.
+
+		
+		
+		
+SOAP Request Header:
+
+	POST http://www.webservicex.net/geoipservice.asmx HTTP/1.1
+		The requested resource.
+	Accept-Encoding: gzip,deflate
+		A list of acceptable encodings, this one includes gzip a GNU zip format and deflate a compression based on the deflate algorithm.
+	Content-Type: text/xml;charset=UTF-8
+		MIME type of the content.
+	SOAPAction: "http://www.webservicex.net/GetGeoIP"
+		Used to show the intent of the SOAP request.
+	Content-Length: 325
+		The length of the request body in octets.
+	Host: www.webservicex.net
+		The domain name of the server, can also specify a port number if not using the default.
+	Connection: Keep-Alive
+		Contains control options for the connection.
+	User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+		Contains the user agent string of the user agent.
+		
+
+		
+		
+SOAP Response Header:
+
+	HTTP/1.1 200 OK
+		Status code of the response.  In this case 200 means a good response.
+	Cache-Control: private, max-age=0
+		Caching mechanism that tells clients if/how long they may cache this message.
+	Content-Type: text/xml; charset=utf-8
+		MIME type of the content.
+	Content-Encoding: gzip
+		The type of encoding used on the response.
+	Vary: Accept-Encoding
+		Information to tell proxies how to match future request headers.  Used to decide if a cached response can be used.
+	Server: Microsoft-IIS/7.0
+		The name of the server.
+	X-AspNet-Version: 4.0.30319
+		The AspNet version of the server.
+	X-Powered-By: ASP.NET
+		Description of server protocol.
+	Date: Mon, 09 Feb 2015 19:28:52 GMT
+		The date/time the message was sent/received.
+	Content-Length: 403
+		The length of the response body in octets.
