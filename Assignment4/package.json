@@ -1,5 +1,5 @@
 {
-  "name": "hw2",
+  "name": "Assignment4",
   "version": "0.0.1",
   "private": "true",
   "description": "My new Apigee 127 Project",
@@ -10,6 +10,7 @@
   "dependencies": {
     "express": "3.x.x",
     "a127-magic": "^0.7.0",
+    "usergrid": "",
     "volos-analytics-apigee": "",
     "volos-analytics-common": "",
     "volos-analytics-memory": "",
@@ -31,8 +32,8 @@
     "start": "node app.js"
   },
   "api": {
-    "name": "hw2",
-    "basePath": "/hw2",
+    "name": "Assignment4",
+    "basePath": "/Assignment4",
     "docsPath": "/docs",
     "main": "app.js"
   }

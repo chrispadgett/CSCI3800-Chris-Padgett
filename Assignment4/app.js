@@ -15,13 +15,14 @@ a127.init(function(config) {
   // error handler to emit errors as a json string
   app.use(function(err, req, res, next) {
     if (err && typeof err === 'object') {
+      Object.defineProperty(err, 'message', { enumerable: true }); // include message property in response
       res.end(JSON.stringify(err));
     }
     next(err);
   });
-
+  var port = process.env.PORT || 10010;
   // begin listening for client requests
-  app.listen(process.env.PORT || 10010);
+  app.listen(port);
 
-  console.log('try this:\ncurl http://127.0.0.1:10010/hello?name=Scott');
+  console.log('Listening...');
 });
