@@ -78,6 +78,11 @@ paths:
           description: ID of the movie to query
           required: true
           type: string
+        - name: reviews
+          in: query
+          description: Returns reviews when set to true
+          required: false
+          type: boolean
       responses:
         "200":
           description: Success

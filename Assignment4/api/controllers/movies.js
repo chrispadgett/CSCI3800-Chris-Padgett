@@ -27,6 +27,7 @@ function getAllMovies(req, res) {
 
 function getMovies(req, res) {
 	var idParam = req.swagger.params.id.value;
+	var getReviews = req.swagger.params.reviews.value || false;
 
 	var dataClient = new usergrid.client({
 		orgName:'cpadgett',
@@ -39,8 +40,31 @@ function getMovies(req, res) {
 	};
 
 	//Call request to initiate the API call
-	dataClient.request(options, function (error, response) {
-		res.json(response);
+	dataClient.request(options, function (error, movieResp) {
+		if(error)
+		{
+			res.json(movieResp);
+		}
+		else
+		{
+			if(getReviews)
+			{
+				var entityOptions = {
+					client: dataClient,
+					data: movieResp.entities[0]
+				};
+
+				var movie = new usergrid.entity(entityOptions);
+				movie.getConnections('reviewed', function (error, reviewResp) {
+					var finalResponse = { movie: movieResp, reviews: reviewResp };
+					res.json(finalResponse);
+				});
+			}
+			else
+			{
+				res.json(movieResp);
+			}
+		}
 	});
 }
 
